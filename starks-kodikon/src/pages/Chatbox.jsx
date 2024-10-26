@@ -1,18 +1,58 @@
 import React, { useState } from "react";
-// import Carousel from "../components/carousel";
-import "./Chatbox.css"; // Import the CSS styling
+import "./Chatbox.css";
 import NameCarousel from "../components/NameCarousel";
+
 function Chatbox() {
   const [messages, setMessages] = useState([
     { text: "Hi! Please tell us what you would like to know", sender: "bot" },
   ]);
   const [input, setInput] = useState("");
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim()) {
-      setMessages([...messages, { text: input, sender: "user" }]);
-      setInput("");
-      // Add logic here to send user input to a chatbot API and display the response
+      const userMessage = { text: input, sender: "user" };
+      setMessages((prevMessages) => [...prevMessages, userMessage]);
+
+      // Send user input to Flask backend
+      try {
+        const response = await fetch("http://127.0.0.1:5000/api/query", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ query: input }),
+        });
+
+        const data = await response.json();
+
+        // Check for success response
+        if (data.status === "success") {
+          // Build bot response with both summary and full text
+          const botResponse = data.results.map((res) => {
+            return `Summary: ${res.summary}\nFull Text: ${res.full_text}`;
+          }).join("\n\n"); // Join responses with two new lines
+
+          // Add bot response to the chat
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { text: botResponse, sender: "bot" },
+          ]);
+        } else {
+          // Handle error response
+          setMessages((prevMessages) => [
+            ...prevMessages,
+            { text: data.message, sender: "bot" },
+          ]);
+        }
+      } catch (error) {
+        console.error("Error fetching response:", error);
+        setMessages((prevMessages) => [
+          ...prevMessages,
+          { text: "Error: Could not reach the server.", sender: "bot" },
+        ]);
+      }
+
+      setInput(""); // Clear input field
     }
   };
 
@@ -43,3 +83,5 @@ function Chatbox() {
 }
 
 export default Chatbox;
+
+
