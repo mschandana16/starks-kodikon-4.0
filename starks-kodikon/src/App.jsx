@@ -2,11 +2,12 @@
 import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Carousel from "./components/carousel";
+// import Carousel from "./components/NameCarousel";
 // import Chatbox from "./pages/Chatbox";
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import "./App.css";
+import NameCarousel from "./components/NameCarousel";
 
 // function App() {
 //   return (
@@ -21,8 +22,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Hero />}></Route>
-        <Route path='/chatbot' element={<Carousel />}></Route>
+        <Route path="/" element={<Hero />}></Route>
+        <Route path="/chatbot" element={<NameCarousel />}></Route>
       </Routes>
     </Router>
   );

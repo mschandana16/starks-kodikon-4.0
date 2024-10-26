@@ -1,0 +1,52 @@
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  background-color: transparent; /* Transparent background */
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 30px; /* Add margin to move the carousel down */
+}
+
+.carousel {
+  display: flex;
+  animation: scroll 80s linear infinite; /* Adjust duration as needed */
+}
+
+.carousel-item {
+  background-color: #e0e0e0;
+  padding: 16px 32px; /* Increased padding for larger boxes */
+  border-radius: 16px;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  min-width: 200px; /* Set a minimum width for each item to maintain size */
+  height: 60px; /* Increased height */
+  display: flex; /* Align items vertically */
+  align-items: center; /* Center the content vertically */
+  justify-content: center; /* Center the content horizontally */
+  margin-right: 20px; /* Add spacing between individual blocks */
+}
+
+/* Remove margin from the last item to avoid extra space */
+.carousel-item:last-child {
+  margin-right: 0; /* Prevent margin on the last item */
+}
+
+/* Keyframes for continuous scrolling */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%); /* Start with the first item fully visible */
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); /* Scroll through half of the duplicated items */
+  }
+}
+
+/* Pause animation on hover */
+.carousel:hover {
+  animation-play-state: paused;
+}
