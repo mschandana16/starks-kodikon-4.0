@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Carousel from "../components/carousel";
+// import Carousel from "../components/carousel";
 import "./Chatbox.css"; // Import the CSS styling
-
+import NameCarousel from "../components/NameCarousel";
 function Chatbox() {
   const [messages, setMessages] = useState([
     { text: "Hi! Please tell us what you would like to know", sender: "bot" },
@@ -18,7 +18,7 @@ function Chatbox() {
 
   return (
     <div>
-      <Carousel />
+      <NameCarousel />
       <section className="chatbox">
         <h3>Chat with Us</h3>
         <div className="chat-history">
