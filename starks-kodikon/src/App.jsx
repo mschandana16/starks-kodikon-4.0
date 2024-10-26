@@ -2,7 +2,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import Chatbox from "./components/Chatbox";
+import Chatbox from "./pages/Chatbox";
 import "./App.css";
 
 function App() {
