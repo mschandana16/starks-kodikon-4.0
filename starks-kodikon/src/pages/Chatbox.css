@@ -75,6 +75,7 @@
 .chat-input-area input[type="text"] {
   flex-grow: 1;
   padding: 1rem 1.2rem;
+  color: #000000;
   border-radius: 25px;
   border: none;
   font-size: 1.1rem;
