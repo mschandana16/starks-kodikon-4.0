@@ -1,11 +1,12 @@
 // src/App.js
 import React from "react";
 import Hero from "./components/Hero";
-import Carousel from "./components/carousel";
+// import Carousel from "./components/NameCarousel";
 import Chatbox from "./pages/Chatbox";
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 import "./App.css";
+import NameCarousel from "./components/NameCarousel";
 
 // function App() {
 //   return (

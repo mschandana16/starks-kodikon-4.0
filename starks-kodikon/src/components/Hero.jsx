@@ -47,9 +47,6 @@ function Hero() {
             and how we can help you navigate through legal documentation and
             bureaucracy.
           </p>
-          <button className="hero-button" onClick={handleButtonClick}>
-            Click Here to View Schemes
-          </button>
         </div>
       </section>
     </div>
