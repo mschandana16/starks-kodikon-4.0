@@ -13,7 +13,7 @@
 }
 
 .carousel-item {
-  background-color: #e0e0e0;
+  background-color: #edf1f6;
   padding: 16px 32px; /* Increased padding for larger boxes */
   border-radius: 16px;
   font-size: 1.2em;
@@ -34,7 +34,6 @@
   margin-right: 0; /* Prevent margin on the last item */
 }
 
-/* Keyframes for continuous scrolling */
 @keyframes scroll {
   0% {
     transform: translateX(0%); /* Start with the first item fully visible */
