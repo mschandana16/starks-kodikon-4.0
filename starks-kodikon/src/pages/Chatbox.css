@@ -1,0 +1,118 @@
+/* Chatbox container */
+.chatbox {
+    width: 800px;
+    max-width: 1500px; /* Increased width */
+    margin: 2rem auto;
+    padding: 3rem; /* Increased padding */
+    border-radius: 15px;
+    background: linear-gradient(135deg, #dfe9f3, #f2f4f6); /* Light blue-gray gradient */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Chatbox header */
+  .chatbox h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: #455a64; /* Darker shade for contrast */
+  }
+  
+  /* Chat history */
+  .chat-history {
+    max-height: 500px; /* Increased height */
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 1rem;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 1rem;
+  }
+  
+  /* Message styling */
+  .message {
+    padding: 0.8rem 1.2rem;
+    margin: 0.6rem 0;
+    border-radius: 20px;
+    width: fit-content;
+    max-width: 80%;
+    position: relative;
+    animation: slideUp 0.3s ease-in-out;
+  }
+  
+  /* User message styling */
+  .message.user {
+    margin-left: auto;
+    background: linear-gradient(135deg, #b0bec5, #cfd8dc); /* Soft gray-blue gradient */
+    color: #333;
+    border-radius: 20px 20px 0 20px;
+  }
+  
+  /* Bot message styling */
+  .message.bot {
+    margin-right: auto;
+    background: rgba(200, 230, 245, 0.7); /* Light blue with transparency */
+    color: #333;
+    border-radius: 20px 20px 20px 0;
+  }
+  
+  /* Input area styling */
+  .chat-input-area {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .chat-input-area input[type="text"] {
+    flex-grow: 1;
+    padding: 1rem 1.2rem;
+    border-radius: 25px;
+    border: none;
+    font-size: 1.1rem;
+    outline: none;
+    background: #e0e7ec; /* Light grayish-blue input background */
+    transition: all 0.3s ease;
+  }
+  
+  .chat-input-area input[type="text"]:focus {
+    box-shadow: 0 0 8px rgba(72, 128, 237, 0.3); /* Subtle light blue focus */
+  }
+  
+  .chat-input-area button {
+    padding: 1rem 1.5rem;
+    background: #64b5f6; /* Soft blue button */
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .chat-input-area button:hover {
+    background: #42a5f5; /* Adjusted hover color */
+  }
+  
+  /* Scrollbar styling */
+  .chat-history::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .chat-history::-webkit-scrollbar-thumb {
+    background: rgba(100, 149, 237, 0.3); /* Subtle blue for scrollbar */
+    border-radius: 5px;
+  }
+  
+  /* Animation */
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

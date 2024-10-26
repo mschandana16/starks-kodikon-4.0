@@ -1,0 +1,178 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQG31XDhGhRh00ZmjYJshInA-w3SoBdtTKsMA&s");
+    background-size: cover; /* Ensures the background image covers the entire page */
+    background-position: center; /* Centers the background image */
+    background-repeat: no-repeat; /* Prevents the background image from repeating */
+    background-attachment: fixed; /* Keeps the background image fixed while scrolling */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh;
+    padding: 0 1rem; /* Small padding on sides to avoid touching the edges */
+  }
+  
+  /* Header */
+  .header {
+    width: 100%;
+    max-width: 1200px; /* Ensure header doesn't stretch too wide */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .header nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .header nav a:hover {
+    color: #007bff;
+  }
+  
+  /* Hero Section */
+  .hero {
+    width: 100%;
+    max-width: 1200px; /* Ensure hero section is not too wide */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1.5rem;
+    background-image: url('/background-image.jpg'); /* replace with actual image path */
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    min-height: 60vh;
+  }
+  
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+  }
+  
+  .hero-content {
+    position: relative;
+    max-width: 800px;
+  }
+  
+  .hero h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  .hero p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+  }
+  
+  /* Chatbox */
+  .chatbox {
+    width: 100%;
+    max-width: 600px; /* Increase max-width to make the chatbox larger */
+    margin: 2rem auto; /* Ensures the chatbox is centered */
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .chatbox h3 {
+    text-align: center;
+    color: #007bff;
+  }
+  
+  .chat-history {
+    max-height: 300px; /* Increased height */
+    overflow-y: auto;
+    margin-bottom: 1rem;
+    padding-right: 10px;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1rem;
+  }
+  
+  .message {
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+  }
+  
+  .message.user {
+    text-align: right;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 10px 10px 0 10px;
+  }
+  
+  .message.bot {
+    text-align: left;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 10px 10px 10px 0;
+  }
+  
+  .chatbox input[type="text"] {
+    width: calc(100% - 70px); /* Adjusted width */
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .chatbox button {
+    width: 60px; /* Adjusted width */
+    padding: 0.5rem;
+    margin-left: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  
+  .chatbox button:hover {
+    background-color: #0056b3;
+  }
+  
+  .hero-button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #0056b3;
+  }
