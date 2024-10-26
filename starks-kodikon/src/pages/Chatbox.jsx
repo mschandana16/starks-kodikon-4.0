@@ -27,15 +27,12 @@
 
 //         // Check for success response
 //         if (data.status === "success") {
-//           // Build bot response with both summary and full text
-//           const botResponse = data.results.map((res) => {
-//             return `Summary: ${res.summary}\nFull Text: ${res.full_text}`;
-//           }).join("\n\n"); // Join responses with two new lines
+//           const formattedResponse = formatFullText(data.results[0].full_text);
 
 //           // Add bot response to the chat
 //           setMessages((prevMessages) => [
 //             ...prevMessages,
-//             { text: botResponse, sender: "bot" },
+//             { text: formattedResponse, sender: "bot" },
 //           ]);
 //         } else {
 //           // Handle error response
@@ -56,6 +53,41 @@
 //     }
 //   };
 
+//   const formatFullText = (fullText) => {
+//     const sections = {};
+    
+//     // Split the fullText by new lines and parse into sections
+//     const lines = fullText.split('\n').map(line => line.trim());
+//     lines.forEach(line => {
+//       if (line.includes('scheme_name:')) {
+//         sections.scheme_name = line.replace('scheme_name:', '').trim();
+//       } else if (line.includes('details:')) {
+//         sections.details = line.replace('details:', '').trim();
+//       } else if (line.includes('benefits:')) {
+//         sections.benefits = line.replace('benefits:', '').trim();
+//       } else if (line.includes('eligibility:')) {
+//         sections.eligibility = line.replace('eligibility:', '').trim();
+//       } else if (line.includes('app_process:')) {
+//         sections.app_process = line.replace('app_process:', '').trim();
+//       } else if (line.includes('docs_reqd:')) {
+//         sections.docs_reqd = line.replace('docs_reqd:', '').trim();
+//       } else if (line.includes('url:')) {
+//         sections.url = line.replace('url:', '').trim();
+//       }
+//     });
+
+//     // Format response for display
+//     return `
+//       <strong>Scheme Name:</strong> ${sections.scheme_name}<br />
+//       <strong>Details:</strong> ${sections.details}<br />
+//       <strong>Benefits:</strong> ${sections.benefits}<br />
+//       <strong>Eligibility:</strong> ${sections.eligibility}<br />
+//       <strong>Application Process:</strong> ${sections.app_process}<br />
+//       <strong>Documents Required:</strong> ${sections.docs_reqd}<br />
+//       <strong>Apply here:</strong> <a href="${sections.url}" target="_blank" rel="noopener noreferrer">${sections.url}</a>
+//     `;
+//   };
+
 //   return (
 //     <div>
 //       <NameCarousel />
@@ -64,7 +96,11 @@
 //         <div className="chat-history">
 //           {messages.map((message, index) => (
 //             <div key={index} className={`message ${message.sender}`}>
-//               {message.text}
+//               {message.sender === "bot" ? (
+//                 <div dangerouslySetInnerHTML={{ __html: message.text }} />
+//               ) : (
+//                 message.text
+//               )}
 //             </div>
 //           ))}
 //         </div>
@@ -83,7 +119,6 @@
 // }
 
 // export default Chatbox;
-
 
 import React, { useState } from "react";
 import "./Chatbox.css";
@@ -137,6 +172,13 @@ function Chatbox() {
       }
 
       setInput(""); // Clear input field
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault(); // Prevent default behavior (like new line)
+      handleSend();
     }
   };
 
@@ -196,6 +238,7 @@ function Chatbox() {
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
+            onKeyDown={handleKeyDown} // Add this line to handle key down
             placeholder="Type your message here..."
           />
           <button onClick={handleSend}>Send</button>
