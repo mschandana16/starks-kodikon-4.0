@@ -1,0 +1,50 @@
+/* src/components/Carousel.css */
+
+.carousel-container {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 20px;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    animation: scroll 20s linear infinite;
+    overflow: hidden;
+    width: 100%;
+    background-color: #f8f9fa;
+    padding: 10px 0;
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .placard {
+    min-width: 200px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+  }
+  
+  .placard:hover {
+    transform: scale(1.05);
+  }
+  
+  .placard a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
