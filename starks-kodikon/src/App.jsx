@@ -3,7 +3,7 @@ import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Carousel from "./components/carousel";
-// import Chatbox from "./components/Chatbox";
+// import Chatbox from "./pages/Chatbox";
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 
 import "./App.css";

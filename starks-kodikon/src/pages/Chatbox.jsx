@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 function Chatbox() {
   const [messages, setMessages] = useState([
-    { text: "Hello! How can I assist you today?", sender: "bot" },
+    { text: "Hi! Please tell us about yourself", sender: "bot" },
   ]);
   const [input, setInput] = useState("");
 
@@ -20,10 +20,7 @@ function Chatbox() {
       <h3>Chat with Us</h3>
       <div className="chat-history">
         {messages.map((message, index) => (
-          <div
-            key={index}
-            className={`message ${message.sender}`}
-          >
+          <div key={index} className={`message ${message.sender}`}>
             {message.text}
           </div>
         ))}
