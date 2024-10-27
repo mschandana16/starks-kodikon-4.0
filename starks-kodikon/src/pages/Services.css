@@ -1,0 +1,71 @@
+/* src/pages/Services.css */
+
+.services-section {
+    padding: 40px;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+    line-height: 1.6;
+  }
+  
+  .services-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+  }
+  
+  .services-header h1 {
+    font-size: 2.5rem;
+    color: #0077b6;
+    margin-bottom: 10px;
+  }
+  
+  .services-header p {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .services-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .services-content h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .services-content p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  .services-content h2::before {
+    content: "• ";
+    color: #0077b6;
+  }
+  
+  @media (min-width: 768px) {
+    .services-section {
+      padding: 60px 100px;
+    }
+  
+    .services-content p {
+      font-size: 1.1rem;
+    }
+  
+    .services-header h1 {
+      font-size: 3rem;
+    }
+  
+    .services-header p {
+      font-size: 1.3rem;
+    }
+  }

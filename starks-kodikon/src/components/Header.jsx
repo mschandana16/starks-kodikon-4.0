@@ -1,15 +1,15 @@
 // src/components/Header.js
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
     <header className="header">
-      <h1>Legal Ease </h1>
+      <h1>Legal Ease</h1>
       <nav>
-        <a href="#analytics">Analytics Dashboard</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#team">Team</a>
+        <Link to="/about">About</Link>
+        <Link to="/services">Services</Link>
+        <Link to="/team">Team</Link>
       </nav>
     </header>
   );
